@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicholas Breite — Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="main-content">
+    <section id="profile">
+    <img src="assets/profile.jpg" alt="Profile Picture" id="profile-pic" />
+    <div id="profile-info">
+        <h1>Nicholas Breite</h1>
+        <p class="summary">
+        Cybersecurity & IT student with a strong foundation in software development,
+        network infrastructure, and secure systems design. Passionate about building
+        efficient, resilient, and secure digital environments.
+        </p>
+        <button id="resume-btn">View Résumé</button>
+    </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div id="project-container" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Résumé Overlay -->
+  <div id="resume-overlay" class="overlay hidden">
+    <div class="overlay-content">
+      <div class="overlay-controls">
+        <button id="close-resume">✕</button>
+        <a href="assets/resume.pdf" download class="download-btn">Download</a>
+      </div>
+      <iframe src="assets/resume.pdf1" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!-- Project Detail Overlay -->
+  <div id="project-overlay" class="overlay hidden">
+    <div class="overlay-content" id="project-details"></div>
+    <button id="close-project" class="close-btn">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
