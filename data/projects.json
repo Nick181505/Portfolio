@@ -1,0 +1,123 @@
+[
+{
+    "title": "FastAPI Web Infrastructure",
+    "image": "assets/images/project1.jpg",
+    "skills": ["Python", "FastAPI", "NGINX", "Cloudflare", "Web Development", "Web Security"],
+    "short_description": "A self-hosted API platform using FastAPI and NGINX behind Cloudflare, serving over 48,000 users.",
+    "full_content": {
+        "title": "FastAPI Web Infrastructure",
+        "sections": [
+            {
+                "p": "This project involved designing, building, and deploying a self-hosted API infrastructure using FastAPI and Uvicorn, with NGINX acting as a reverse proxy and Cloudflare providing an external security layer. The goal was to create a secure, scalable, and high-performance environment for hosting multiple web services under a unified platform, with a focus on mobile-device users."
+            },
+            {
+                "media": "assets/images/project1-0.jpg"
+            },
+            {
+                "p": "The image above shows the dashboard interface where authenticated users can manage their settings and privacy preferences. This includes toggles for options like who can invite them to chat, visibility of last seen time, and whether past usernames are displayed. Administrative tools, such as service restarts and live system status checks, are also accessible here. The dashboard integrates a real-time web console that logs activities such as user data updates, failed login attempts, and data deletion requests."
+            },
+            {
+                "p": "The backend was built using FastAPI for its asynchronous performance and scalability under heavy load. Uvicorn provides the ASGI server layer, while NGINX handles HTTPS termination, reverse proxying, route management, and rate limiting. This layered architecture ensures reliability and fast response times even during high-traffic periods."
+            },
+            {
+                "media": "assets/images/project1-1.jpg"
+            },
+            {
+                "p": "The NGINX configuration, shown in the image above, demonstrates how various routes are defined and proxied to internal FastAPI services. The setup includes specific rules for static content caching, secure header injection, and automated handling of CORS and authentication endpoints. These optimizations help maintain consistent performance and improve both developer and user experience."
+            },
+            {
+                "p": "All inbound traffic is routed exclusively through Cloudflare to prevent direct exposure of the origin server. Cloudflare manages DNS, SSL certificates, and Web Application Firewall (WAF) rules, while NGINX performs strict origin validation to only accept requests from Cloudflare’s IP ranges. This design creates a layered defense model that blocks unauthorized access and mitigates common web attacks."
+            },
+            {
+                "media": "assets/images/project1-2.png"
+            },
+            {
+                "p": "The Cloudflare dashboard shown here reflects approximately 7,800 unique visitors in a 30-day period, averaging between 299 and 433 daily users. Continuous analytics and traffic insights help in monitoring request patterns, potential abuse attempts, and overall system health. The API platform currently supports over 48,000 registered accounts, serving both live and automated clients globally."
+            },
+            {
+                "p": "Security and reliability were key priorities throughout the development process. Features such as user authentication tokens, rate limiting, and IP-based request throttling were implemented to protect against misuse. Regular performance checks and log analysis ensure the platform remains stable and secure as usage scales."
+            },
+            {
+                "p": "Through this project, I gained hands-on experience in secure web architecture, reverse proxy design, and the application of zero-trust network principles. The platform remains operational and continues to serve as the foundation for several other personal and experimental projects that depend on its API endpoints."
+            }
+        ]
+    }
+},
+{
+    "title": "ESP32-S3 WebSocket Display",
+    "image": "assets/images/project2.gif",
+    "skills": ["ESP32", "Embedded Programing", "WebSocket", "C", "Python"],
+    "short_description": "An ESP32-S3 based device that displays real-time messages, images, and animations via WebSocket.",
+    "full_content": {
+        "title": "ESP32-S3 WebSocket Display",
+        "sections": [
+            {
+                "p": "This project uses an ESP32-S3 microcontroller with a built-in display (the T-Display S3 by LilyGO) to receive and show real-time text, images, and animations sent over a WebSocket connection. The goal was to build a lightweight embedded display system that could be controlled remotely through a web-connected API, serving as a foundation for scalable applications such as digital signage or IoT dashboards."
+            },
+            {
+                "media": "assets/images/project2-0.png"
+            },
+            {
+                "p": "The ESP32 connects to Wi-Fi and then to a WebSocket server hosted on my domain. The server, written in Python, handles incoming requests from a desktop control interface, converts images and video into compressed binary data, and transmits them to the ESP device in real time. This allows the display to instantly update with media sent from a desktop or web-based controller."
+            },
+            {
+                "media": "assets/images/project2-1.png"
+            },
+            {
+                "p": "Developing this project required careful consideration of how to efficiently format and send binary data to the microcontroller. I designed a custom packet structure to encode media efficiently, ensuring fast transmission and minimal memory overhead on the device. The ESP32 firmware, written in C using PlatformIO, decodes these packets, verifies integrity, and updates the display buffer accordingly."
+            },
+            {
+                "p": "To make the system more resilient, I implemented a simple local storage system on the ESP32 using its onboard flash memory. The idea was that, if the device lost network connectivity, it could continue displaying locally stored media until the connection was restored. This approach was inspired by potential commercial use cases such as smart signage or information displays that must remain functional even without constant network access."
+            },
+            {
+                "p": "Security was another key aspect of the design. I wanted to prevent unauthorized users from sending content to the display, so I explored techniques such as encryption and digital signatures for transmitted media. While these features weren’t essential for a personal project, experimenting with them gave me hands-on experience with practical data integrity and authentication mechanisms in IoT environments."
+            },
+            {
+                "p": "The firmware also includes a small on-screen menu system that allows local interaction using built-in buttons. This menu provides options for Wi-Fi setup, manual reconnection, and clearing cached data. Additionally, I developed a remote control system that can simulate button presses from the desktop interface, enabling complete remote management of the device."
+            },
+            {
+                "p": "An important part of the development process was ensuring the system could handle malformed or oversized data safely. To prevent crashes or security vulnerabilities, the ESP32 validates each received packet before writing to memory. This also helped reduce the risk of buffer overflow conditions, a common exploit vector in embedded systems."
+            },
+            {
+                "p": "Through this project, I gained experience in embedded development, real-time communication protocols, data serialization, and security practices for connected devices. It taught me how to bridge high-level server logic with low-level hardware control, creating a reliable and extensible system that combines software engineering, networking, and IoT principles."
+            }
+        ]
+    }
+},
+{
+  "title": "Secure Server Deployment and Virtualization with Pterodactyl + Linux",
+  "image": "assets/images/project3.png",
+  "skills": ["Linux", "Pterodactyl", "Docker", "Cloudflare", "System Hardening", "Network Security"],
+  "short_description": "A self-hosted server platform built on Linux and Pterodactyl, designed for secure virtualization and service hosting using Docker, Cloudflare protection, and advanced performance tuning.",
+  "full_content": {
+    "title": "Secure Server Deployment and Virtualization with Pterodactyl + Linux",
+    "sections": [
+      {
+        "p": "This project involved setting up and securing a high-performance server environment using a Threadripper-based system and Pterodactyl for virtualization and multi-service hosting. The goal was to create a robust platform that allows multiple isolated environments to run simultaneously, each capable of hosting individual applications or game servers under strict resource and access control."
+      },
+      {
+        "media": "assets/images/project3-0.png"
+      },
+      {
+        "p": "The server runs on Linux and uses Docker containers for process isolation. Pterodactyl serves as the management interface, providing user-level control while maintaining root-level security boundaries. Each containerized environment operates with its own resource limits, ensuring performance stability even under heavy workloads. This setup also simplifies management and improves the reliability of hosted services."
+      },
+      {
+        "p": "To enhance security, the server is configured behind Cloudflare, with all external traffic routed through Cloudflare’s network. This approach hides the server’s origin IP, filters malicious requests, and applies DDoS protection automatically. NGINX is used internally for reverse proxying and SSL termination, ensuring encrypted communication between users and hosted applications."
+      },
+      {
+        "media": "assets/images/project3-1.png"
+      },
+      {
+        "p": "System-level hardening was a major focus. BIOS settings were tuned to balance performance and stability, kernel parameters were optimized for networking throughput, and access controls were implemented to restrict unnecessary system privileges. Linux firewall rules (UFW and iptables) were configured to whitelist only essential ports, while SSH access was restricted to specific keys and IP addresses."
+      },
+      {
+        "p": "Monitoring and maintenance were handled through system logging and analytics tools, which track CPU utilization, memory usage, and container uptime. Alerts and logs help identify performance bottlenecks and unusual activity quickly. Periodic audits ensure that user containers remain isolated and no unauthorized data sharing occurs between hosted environments."
+      },
+      {
+        "p": "This project reinforced my understanding of secure infrastructure deployment, containerization, and the importance of layered defenses in server administration. It also gave me experience tuning and maintaining real-world systems that are both accessible to users and hardened against potential threats."
+      }
+    ]
+  }
+}
+
+]
